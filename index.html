@@ -1,0 +1,62 @@
+// Pong Code Runner
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pong</title>
+  <style>
+    body {
+        background: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    #score {
+        display: flex;
+        justify-content: space-between;
+        width: 400px;
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    #leftScore { color: #00C3E3; }
+    #rightScore { color: #FF3C28; }
+      canvas {
+    border: 3px solid 	#B026FF;
+    box-shadow: 0 0 20px #9D4EDD;
+}
+    #speedBar {
+      width: 200px;
+      height: 6px;
+      background: #333333;
+      align-self: center;
+    }
+    #speedBarFill {
+      width: 0%;
+      height: 100%;
+    }
+    @keyframes fly {
+    to {
+        transform: translate(var(--dx), var(--dy));
+        opacity: 0;
+    }
+}
+.particle {
+    animation: fly 0.5s ease-out forwards;
+    box-shadow: 0 0 8px currentColor, 0 0 16px currentColor;
+}
+</style>
+</head>
+<body>
+<div id="score">
+    <span id="leftScore">0</span>
+    <div id="speedBar"><div id="speedBarFill"></div></div>
+    <span id="rightScore">0</span>
+</div>
+  <canvas id="game" width="800" height="600"></canvas>
+<script src="script.js"></script>
+</body>
+</html>
