@@ -21,4 +21,5 @@ A neon-drenched, chaotic reimagining of the classic game of Pong. Built with HTM
 *   HTML5 Canvas
 *   Vanilla JavaScript
 *   CSS Animations
-P.S: Yes, the source code has internal names for the green box effects. No, I'm not telling you what they are. Go look.
+## ⭐ Extra Stuff
+*  P.S: Yes, the source code has internal names for the green box effects. No, I'm not telling you what they are. Go look. I'm talking to you **Data Miners**.
