@@ -1239,26 +1239,31 @@ if (Date.now() - fpsLast >= 1000) {
 requestAnimationFrame(gameLoop);
 };
 document.addEventListener("keydown", function(event) {
-if (event.key === "q") {
-    upPressed = true 
-}
-if (event.key === "a") {
-    downPressed = true
-}
-if (event.key === "ArrowUp") {
-    rightUpPressed = true;
-}
-if (event.key === "ArrowDown") {
-    rightDownPressed = true;
-}
-if (event.key === " ") {
-pauseScreenActive = !pauseScreenActive;
-if (pauseScreenActive === true) { 
-    console.log("Paused");
-} else {
-    console.log("Unpaused");
-}
-}
+    if (event.key === "w") {
+        upPressed = true;
+    }
+    if (event.key === "s") {
+        downPressed = true;
+    }
+    if (event.key === "ArrowUp") {
+        event.preventDefault();
+        rightUpPressed = true;
+    }
+    if (event.key === "ArrowDown") {
+        event.preventDefault();
+        rightDownPressed = true;
+    }
+    if (event.key === " ") {
+        event.preventDefault();
+        if (!event.repeat) {
+            pauseScreenActive = !pauseScreenActive;
+            if (pauseScreenActive === true) {
+                console.log("Paused");
+            } else {
+                console.log("Unpaused");
+            }
+        }
+    }
 });
 document.addEventListener("keyup", function(event) {
 if (event.key === "w") upPressed = false;
